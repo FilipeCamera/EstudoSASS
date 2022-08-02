@@ -1,0 +1,24 @@
+@use 'variables'
+
+
+@mixin container
+    background: variables.$bg-color
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    padding: 1.25rem 2.8rem
+
+@mixin links($active: false)
+    font-size: 1.8rem
+    text-decoration: none
+    font-weight: 500
+    color: variables.$secondary-color
+    transition: color .2s
+    &:hover
+        color: variables.$primary-color
+    
+    @if $active
+        color: variables.$all-color
+        &:hover
+            color: variables.$all-secondary-color

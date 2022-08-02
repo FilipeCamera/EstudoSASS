@@ -1,0 +1,35 @@
+@use 'variables'
+@use 'mixins'
+
+*
+    margin: 0
+    padding: 0
+    border-box: box-sizing
+    font-size: 62.5%
+    font-family: 'Inter', sans-serif
+
+.header 
+    @include mixins.container
+    &-logo
+        font-size: 3.2rem
+        font-weight: 900
+        color: variables.$primary-color
+    &-nav
+        display: flex
+        flex: 1
+        flex-direction: row
+        align-items: center
+        justify-content: flex-end
+        &-box
+            display: flex
+            width: 50%
+            flex-direction: row
+            align-items: center
+            justify-content: space-around
+            &-link
+                @include mixins.links($active: false)
+            
+            &-link-active
+                @include mixins.links($active: true)
+
+    
